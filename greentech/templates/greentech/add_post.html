@@ -1,0 +1,13 @@
+{% extends 'greentech/base.html' %}
+
+{% block title %}Add New Post{% endblock %}
+
+{% block content %}
+<h2>Add a New Post</h2>
+<form method="POST" enctype="multipart/form-data">
+    {% csrf_token %}
+    {{ form.as_p }}
+    <button type="submit" class="btn btn-success">Save</button>
+</form>
+
+{% endblock %}

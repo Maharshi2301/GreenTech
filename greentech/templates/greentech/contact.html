@@ -1,0 +1,17 @@
+{% extends 'greentech/base.html' %}
+
+{% block title %}Contact Us{% endblock %}
+
+{% block content %}
+<h2>Contact Us</h2>
+
+{% if success %}
+    <div class="alert alert-success">Your message has been sent successfully!</div>
+{% endif %}
+
+<form method="POST">
+    {% csrf_token %}
+    {{ form.as_p }}
+    <button type="submit" class="btn btn-success">Send Message</button>
+</form>
+{% endblock %}
