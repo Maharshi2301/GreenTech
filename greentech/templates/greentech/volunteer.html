@@ -1,0 +1,38 @@
+{% extends "greentech/base.html" %}
+{% block title %}Volunteer Request | GreenTech{% endblock %}
+
+{% block content %}
+<div class="container mt-4">
+    <h2>Volunteer with Us</h2>
+
+    {% if user.is_authenticated and user.volunteer_request %}
+        {% if user.volunteer_request.status == 'P' %}
+            <div class="alert alert-info">
+                Your volunteer request is pending approval. Please wait for an admin to review it.
+            </div>
+        {% elif user.volunteer_request.status == 'A' %}
+            <div class="alert alert-success">
+                You are an approved volunteer! You can now apply for events.
+                <a href="{% url 'event_list' %}" class="btn btn-outline-primary btn-sm mt-2">View Events</a>
+            </div>
+        {% elif user.volunteer_request.status == 'D' %}
+            <div class="alert alert-danger">
+                Your volunteer request was denied. Contact admin for more details.
+            </div>
+        {% endif %}
+    {% else %}
+        {% if success %}
+            <div class="alert alert-success">
+                Thank you! Your request has been submitted.
+            </div>
+        {% else %}
+            <p>Please fill out the form below to become a volunteer. Once approved, you can apply for events.</p>
+            <form method="post" novalidate>
+                {% csrf_token %}
+                {{ form.as_p }}
+                <button type="submit" class="btn btn-primary">Submit</button>
+            </form>
+        {% endif %}
+    {% endif %}
+</div>
+{% endblock %}

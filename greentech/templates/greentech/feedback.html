@@ -1,0 +1,20 @@
+{# greentech/templates/greentech/feedback.html #}
+{% extends "greentech/base.html" %}
+{% block title %}Feedback{% endblock %}
+{% block content %}
+  <div class="container">
+    <h2>Feedback Form</h2>
+
+    {% if success %}
+      <div class="alert alert-success">
+        Thanks for your feedback!
+      </div>
+    {% endif %}
+
+    <form method="post" novalidate>
+      {% csrf_token %}
+      {{ form.as_p }}
+      <button type="submit" class="btn btn-primary">Submit</button>
+    </form>
+  </div>
+{% endblock %}

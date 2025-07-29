@@ -1,0 +1,14 @@
+{% extends 'greentech/base.html' %}
+{% block content %}
+  <div class="container mt-4">
+    <h2>Submit a Suggestion</h2>
+    {% if success %}
+      <div class="alert alert-success">Thank you for your suggestion!</div>
+    {% endif %}
+    <form method="POST">
+      {% csrf_token %}
+      {{ form.as_p }}
+      <button type="submit" class="btn btn-info">Send Suggestion</button>
+    </form>
+  </div>
+{% endblock %}

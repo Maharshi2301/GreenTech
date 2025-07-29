@@ -1,0 +1,57 @@
+{% extends 'greentech/base.html' %}
+
+{% block title %}{{ post.title }} - GreenTech{% endblock %}
+
+{% block content %}
+<div class="container mt-5">
+    <div class="card shadow p-4 mx-auto" style="max-width: 800px;">
+        {% if post.image %}
+            <img src="{{ post.image.url }}" class="img-fluid mb-4" alt="{{ post.title }}">
+        {% endif %}
+        <h2 class="text-success">{{ post.title }}</h2>
+        <p class="text-muted">by {{ post.author }} | {{ post.created_at|date:"d M Y H:i" }}</p>
+        <p>{{ post.content }}</p>
+        <a href="{% url 'home' %}" class="btn btn-outline-success mt-3">← Back to Posts</a>
+
+        <!-- Feedback Section -->
+        <hr class="my-4">
+        <h4>Feedbacks</h4>
+        {% for fb in feedbacks %}
+            <div class="border p-2 mb-2">
+                <strong>{{ fb.user.username }}</strong> <small class="text-muted">{{ fb.created_at|date:"d M Y H:i" }}</small>
+                <p>{{ fb.feedback }}</p>
+            </div>
+        {% empty %}
+            <p class="text-muted">No feedback yet. Be the first!</p>
+        {% endfor %}
+
+        <!-- Feedback Button -->
+        {% if user.is_authenticated %}
+            <button class="btn btn-primary mt-3" data-bs-toggle="modal" data-bs-target="#feedbackModal">
+                Leave Feedback
+            </button>
+        {% else %}
+            <p class="text-muted mt-3">Login to leave feedback.</p>
+        {% endif %}
+    </div>
+</div>
+
+<!-- Feedback Modal -->
+<div class="modal fade" id="feedbackModal" tabindex="-1" aria-labelledby="feedbackModalLabel" aria-hidden="true">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="feedbackModalLabel">Your Feedback</h5>
+        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+      </div>
+      <div class="modal-body">
+        <form method="post">
+          {% csrf_token %}
+          {{ feedback_form.as_p }}
+          <button type="submit" class="btn btn-success mt-2">Submit</button>
+        </form>
+      </div>
+    </div>
+  </div>
+</div>
+{% endblock %}

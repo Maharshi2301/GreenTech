@@ -3,15 +3,30 @@
 {% block title %}Contact Us{% endblock %}
 
 {% block content %}
-<h2>Contact Us</h2>
-
-{% if success %}
-    <div class="alert alert-success">Your message has been sent successfully!</div>
-{% endif %}
-
-<form method="POST">
-    {% csrf_token %}
-    {{ form.as_p }}
-    <button type="submit" class="btn btn-success">Send Message</button>
-</form>
+<div class="container mt-5">
+    <div class="card1 shadow p-4 mx-auto bg-success-subtle" style="max-width: 600px;">
+        <h2 class="text-center text-success mb-4">Contact Us</h2>
+        {% if success %}
+            <div class="alert alert-success text-center">Your message has been sent successfully!</div>
+        {% endif %}
+        <form method="POST">
+            {% csrf_token %}
+            <div class="mb-3">
+                <label for="id_name" class="form-label">Name:</label>
+                {{ form.name }}
+            </div>
+            <div class="mb-3">
+                <label for="id_email" class="form-label">Email:</label>
+                {{ form.email }}
+            </div>
+            <div class="mb-3">
+                <label for="id_message" class="form-label">Message:</label>
+                {{ form.message }}
+            </div>
+            <div class="text-center">
+                <button type="submit" class="btn btn-success px-4">Send Message</button>
+            </div>
+        </form>
+    </div>
+</div>
 {% endblock %}

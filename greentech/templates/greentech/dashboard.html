@@ -1,0 +1,83 @@
+{% extends "greentech/base.html" %}
+
+{% block title %}Admin Dashboard | GreenTech{% endblock %}
+
+{% block content %}
+<div class="container">
+    <h2 class="mb-4">Admin Dashboard</h2>
+    <div class="row g-3">
+
+        <!-- Total Posts -->
+        <div class="col-md-4">
+            <a href="{% url 'admin_post_list' %}" class="text-decoration-none">
+                <div class="card text-white bg-primary h-100">
+                    <div class="card-header">Total Posts</div>
+                    <div class="card-body">
+                        <h5 class="card-title text-white">{{ total_posts }}</h5>
+                    </div>
+                </div>
+            </a>
+        </div>
+
+        <!-- Contact Messages -->
+        <div class="col-md-4">
+            <a href="{% url 'contact_messages' %}" class="text-decoration-none">
+                <div class="card text-white bg-secondary h-100">
+                    <div class="card-header">Contact Messages</div>
+                    <div class="card-body">
+                        <h5 class="card-title text-white">{{ total_contacts }}</h5>
+                    </div>
+                </div>
+            </a>
+        </div>
+
+        <!-- Feedbacks -->
+        <div class="col-md-4">
+            <a href="{% url 'feedback_list' %}" class="card text-white bg-success h-100 text-decoration-none">
+                <div class="card text-white bg-success h-100">
+                    <div class="card-header">Feedbacks</div>
+                    <div class="card-body">
+                        <h5 class="card-title text-white">{{ total_feedbacks }}</h5>
+                    </div>
+                </div>
+            </a>
+        </div>
+
+        <!-- Volunteer Applications -->
+        <div class="col-md-4">
+            <a href="{% url 'volunteer_requests' %}" class="text-decoration-none">
+                <div class="card text-white bg-info h-100">
+                    <div class="card-header">Volunteer Applications</div>
+                    <div class="card-body">
+                        <h5 class="card-title text-white">{{ total_volunteers }}</h5>
+                    </div>
+                </div>
+            </a>
+        </div>
+
+        <!-- Event List -->
+        <div class="col-md-4">
+            <a href="{% url 'admin_event_list' %}" class="text-decoration-none">
+                <div class="card text-white bg-warning h-100">
+                    <div class="card-header">Events</div>
+                    <div class="card-body">
+                        <h5 class="card-title text-white">{{ total_events }}</h5>
+                    </div>
+                </div>
+            </a>
+        </div>
+
+        <!-- Reported Issues -->
+        <div class="col-md-4">
+            <a href="{% url 'user_list' %}" class="text-decoration-none">
+                <div class="card text-white bg-danger h-100">
+                    <div class="card-header">Users</div>
+                    <div class="card-body">
+                        <h5 class="card-title text-white">{{ total_users }}</h5>
+                    </div>
+                </div>
+            </a>
+        </div>
+    </div>
+</div>
+{% endblock %}

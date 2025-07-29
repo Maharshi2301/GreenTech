@@ -1,0 +1,14 @@
+{% extends 'greentech/base.html' %}
+{% block content %}
+  <div class="container mt-4">
+    <h2>Report an Issue</h2>
+    {% if success %}
+      <div class="alert alert-success">Your issue has been reported. Thank you!</div>
+    {% endif %}
+    <form method="POST">
+      {% csrf_token %}
+      {{ form.as_p }}
+      <button type="submit" class="btn btn-danger">Report</button>
+    </form>
+  </div>
+{% endblock %}

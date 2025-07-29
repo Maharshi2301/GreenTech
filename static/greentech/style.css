@@ -7,7 +7,7 @@
 }
 
 .navbar .nav-link:hover {
-    background-color: rgba(255, 255, 255, 0.2);
+    background-color: rgba(168, 230, 207, 0.4);
     border-radius: 5px;
 }
 
@@ -28,4 +28,78 @@
 .navbar {
     padding-top: 8px;
     padding-bottom: 8px;
+}
+
+body {
+    background-color: #f8f9fa; /* Light gray background */
+    color: #212529; /* Dark text */
+}
+
+.card {
+    border-radius: 8px;
+    background-color: #ffffff; /* White cards */
+    color: #212529;
+    transition: transform 0.2s ease;
+    border: 1px solid #e0e0e0;
+}
+
+.card:hover {
+    transform: scale(1.02);
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+}
+
+.card1 {
+    border-radius: 8px;
+    background-color: #ffffff; /* White cards */
+    color: #212529;
+    transition: transform 0.2s ease;
+    border: 1px solid #e0e0e0;
+}
+.form-control {
+    background-color: #ffffff;
+    border: 1px solid #ccc;
+    color: #212529;
+    border-radius: 4px;
+}
+
+.form-control:focus {
+    box-shadow: 0 0 5px #28a745;
+    border-color: #28a745;
+}
+
+.btn-success {
+    background-color: #28a745;
+    border: none;
+    font-weight: 500;
+}
+
+.btn-success:hover {
+    background-color: #218838;
+}
+
+.card-link {
+    text-decoration: none;
+    color: inherit;
+    display: block;
+}
+
+.card-link:hover .card {
+    transform: scale(1.02);
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.15);
+}
+
+.pagination .page-link {
+    color: #28a745;
+    border: 1px solid #dee2e6;
+    margin: 0 2px;
+}
+.pagination .page-item.active .page-link {
+    background-color: #28a745;
+    border-color: #28a745;
+    color: white;
+}
+
+.hover-opacity:hover {
+    opacity: 0.5;
+    transition: opacity 0.3s ease;
 }
