@@ -7,28 +7,7 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="e603b563-ce13-457c-9718-730e0db71188" name="Changes" comment="Working on Phase 2">
-      <change afterPath="$PROJECT_DIR$/greentech/templates/greentech/admin_post_list.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/greentech/templates/greentech/contact_messages.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/greentech/templates/greentech/dashboard.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/greentech/templates/greentech/feedback.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/greentech/templates/greentech/post_detail.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/greentech/templates/greentech/report_issue.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/greentech/templates/greentech/suggestion.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/greentech/templates/greentech/user_list.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/greentech/templates/greentech/volunteer.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/greentech/templates/greentech/volunteer_requests.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/GreenTech.iml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/GreenTech.iml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/greentech/forms.py" beforeDir="false" afterPath="$PROJECT_DIR$/greentech/forms.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/greentech/templates/greentech/about.html" beforeDir="false" afterPath="$PROJECT_DIR$/greentech/templates/greentech/about.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/greentech/templates/greentech/add_post.html" beforeDir="false" afterPath="$PROJECT_DIR$/greentech/templates/greentech/add_post.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/greentech/templates/greentech/base.html" beforeDir="false" afterPath="$PROJECT_DIR$/greentech/templates/greentech/base.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/greentech/templates/greentech/contact.html" beforeDir="false" afterPath="$PROJECT_DIR$/greentech/templates/greentech/contact.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/greentech/templates/greentech/home.html" beforeDir="false" afterPath="$PROJECT_DIR$/greentech/templates/greentech/home.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/greentech/urls.py" beforeDir="false" afterPath="$PROJECT_DIR$/greentech/urls.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/static/greentech/style.css" beforeDir="false" afterPath="$PROJECT_DIR$/static/greentech/style.css" afterDir="false" />
-    </list>
+    <list default="true" id="e603b563-ce13-457c-9718-730e0db71188" name="Changes" comment="Working on Phase 2" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -58,11 +37,13 @@
   "keyToString": {
     "DefaultHtmlFileTemplate": "HTML File",
     "ModuleVcsDetector.initialDetectionPerformed": "true",
+    "Python.forms.executor": "Run",
+    "Python.manage.executor": "Run",
     "RunOnceActivity.ShowReadmeOnStart": "true",
     "RunOnceActivity.git.unshallow": "true",
     "git-widget-placeholder": "master",
     "ignore.virus.scanning.warn.message": "true",
-    "last_opened_file_path": "D:/Devarsh/College/Windsor University/Study/3. Spring 25/IADS/_gre/GreenTech",
+    "last_opened_file_path": "D:/MAC/Sem 3/IADS/Final Project/Final Project/GreenTech",
     "list.type.of.created.stylesheet": "CSS",
     "node.js.detected.package.eslint": "true",
     "node.js.detected.package.tslint": "true",
@@ -78,6 +59,54 @@
     <key name="MoveFile.RECENT_KEYS">
       <recent name="$PROJECT_DIR$/greentech/templates/greentech" />
     </key>
+  </component>
+  <component name="RunManager">
+    <configuration name="forms" type="PythonConfigurationType" factoryName="Python" nameIsGenerated="true">
+      <module name="GreenTech" />
+      <option name="ENV_FILES" value="" />
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <envs>
+        <env name="PYTHONUNBUFFERED" value="1" />
+      </envs>
+      <option name="SDK_HOME" value="" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/greentech" />
+      <option name="IS_MODULE_SDK" value="true" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <EXTENSION ID="PythonCoverageRunConfigurationExtension" runner="coverage.py" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/greentech/forms.py" />
+      <option name="PARAMETERS" value="" />
+      <option name="SHOW_COMMAND_LINE" value="false" />
+      <option name="EMULATE_TERMINAL" value="false" />
+      <option name="MODULE_MODE" value="false" />
+      <option name="REDIRECT_INPUT" value="false" />
+      <option name="INPUT_FILE" value="" />
+      <method v="2" />
+    </configuration>
+    <configuration name="manage" type="PythonConfigurationType" factoryName="Python" nameIsGenerated="true">
+      <module name="GreenTech" />
+      <option name="ENV_FILES" value="" />
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <envs>
+        <env name="PYTHONUNBUFFERED" value="1" />
+      </envs>
+      <option name="SDK_HOME" value="" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
+      <option name="IS_MODULE_SDK" value="true" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <EXTENSION ID="PythonCoverageRunConfigurationExtension" runner="coverage.py" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/manage.py" />
+      <option name="PARAMETERS" value="" />
+      <option name="SHOW_COMMAND_LINE" value="false" />
+      <option name="EMULATE_TERMINAL" value="false" />
+      <option name="MODULE_MODE" value="false" />
+      <option name="REDIRECT_INPUT" value="false" />
+      <option name="INPUT_FILE" value="" />
+      <method v="2" />
+    </configuration>
   </component>
   <component name="SharedIndexes">
     <attachedChunks>
@@ -99,6 +128,7 @@
       <workItem from="1753727358095" duration="37000" />
       <workItem from="1753727524806" duration="20658000" />
       <workItem from="1753803586503" duration="3689000" />
+      <workItem from="1753815219511" duration="1665000" />
     </task>
     <task id="LOCAL-00001" summary="Working on Phase 2">
       <option name="closed" value="true" />

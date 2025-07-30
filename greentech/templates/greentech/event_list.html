@@ -1,0 +1,46 @@
+{% extends "greentech/base.html" %}
+{% load custom_tags %}
+{% block title %}Events | GreenTech{% endblock %}
+{% block content %}
+<div class="container mt-4">
+    <h2 class="mb-3">Upcoming Events</h2>
+    <a href="{% url 'add_event' %}" class="btn btn-primary mb-3">+ Add Event</a>
+    <!--    {% if user.is_staff %}-->
+    <!--    {% endif %}-->
+    <ul class="list-group">
+        {% for event in events %}
+            <li class="list-group-item d-flex justify-content-between align-items-center">
+                <div>
+                    <a class="text-black text-decoration-none" href="{% url 'event_detail' event.pk %}"><strong>{{ event.title }}</strong></a><br>
+                    <small class="text-muted">{{ event.date }} | {{ event.location }}</small>
+                </div>
+                {% if user.is_authenticated and user == event.created_by %}
+                    <span class="badge bg-dark">Your Event</span>
+                {% elif user.is_authenticated and user.volunteer_request.status == 'A' %}
+                    {% if user_applications|get_item:event.id %}
+                        {% if user_applications|get_item:event.id == 'A' %}
+                            <span class="badge bg-success">Accepted</span>
+                        {% elif user_applications|get_item:event.id == 'D' %}
+                            <span class="badge bg-danger">Rejected</span>
+                        {% else %}
+                            <span class="badge bg-warning text-dark">Pending</span>
+                        {% endif %}
+                    {% else %}
+                        <a href="{% url 'apply_volunteer' %}?event={{ event.pk }}" class="btn btn-sm btn-outline-success">
+                            Volunteer
+                        </a>
+                    {% endif %}
+                {% elif user.is_authenticated and user.volunteer_request.status == 'P' %}
+                    <span class="badge bg-secondary">Volunteer request pending</span>
+                {% elif user.is_authenticated and user.volunteer_request.status == 'D' %}
+                    <span class="badge bg-danger">Volunteer request denied</span>
+                {% else %}
+                    <a href="{% url 'login' %}" class="btn btn-sm btn-outline-primary">Login to Volunteer</a>
+                {% endif %}
+            </li>
+        {% empty %}
+            <li class="list-group-item">No events available at the moment.</li>
+        {% endfor %}
+    </ul>
+</div>
+{% endblock %}

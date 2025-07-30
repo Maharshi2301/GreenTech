@@ -1,0 +1,61 @@
+{% extends "greentech/base.html" %}
+{% block title %}Manage Events | GreenTech{% endblock %}
+{% block content %}
+<div class="container mt-4">
+    <h2 class="mb-4">Manage Events & Volunteers</h2>
+
+    {% for event in events %}
+        <div class="card mb-4">
+            <div class="card-header bg-primary text-white">
+                <h5 class="mb-0">{{ event.title }} <small class="text-light">({{ event.date }} | {{ event.location }})</small></h5>
+            </div>
+            <div class="card-body">
+                <p>{{ event.description }}</p>
+                
+                <h6>Volunteer Applications</h6>
+                <table class="table table-sm table-bordered">
+                    <thead class="table-light">
+                        <tr>
+                            <th>Name</th>
+                            <th>Email</th>
+                            <th>Motivation</th>
+                            <th>Status</th>
+                            <th>Actions</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        {% for app in event.applications.all %}
+                            <tr>
+                                <td>{{ app.name }}</td>
+                                <td>{{ app.email }}</td>
+                                <td>{{ app.motivation|truncatechars:50 }}</td>
+                                <td>{{ app.get_status_display }}</td>
+                                <td>
+                                    {% if app.status == 'P' %}
+                                        <form action="{% url 'accept_event_volunteer' app.pk %}" method="post" style="display:inline;">
+                                            {% csrf_token %}
+                                            <button type="submit" class="btn btn-sm btn-success">Accept</button>
+                                        </form>
+                                        <form action="{% url 'deny_event_volunteer' app.pk %}" method="post" style="display:inline;">
+                                            {% csrf_token %}
+                                            <button type="submit" class="btn btn-sm btn-danger">Deny</button>
+                                        </form>
+                                    {% else %}
+                                        <span class="text-muted">No actions</span>
+                                    {% endif %}
+                                </td>
+                            </tr>
+                        {% empty %}
+                            <tr>
+                                <td colspan="5" class="text-center text-muted">No volunteer applications yet.</td>
+                            </tr>
+                        {% endfor %}
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    {% empty %}
+        <p class="text-muted">No events created yet.</p>
+    {% endfor %}
+</div>
+{% endblock %}
